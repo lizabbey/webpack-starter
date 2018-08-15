@@ -1,0 +1,15 @@
+//Everything used across the entire site
+
+//@import url('add_google_fonts_url_here_if_needed');
+
+html, body{
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+a {
+	transition:color .2s linear;
+	&:hover, &:focus {text-decoration:none;}
+}

@@ -1,0 +1,26 @@
+// SCSS for all internal page styling
+.internal {
+	word-wrap: break-word;
+	@extend .container;
+	@extend .clearfix;
+
+	img {@include img-fluid;}
+	p img {display:inherit;}
+
+	.map iframe {
+		@include img-fluid;
+		min-height:350px;
+	}
+
+	.entry {
+		@extend .clearfix;
+	}
+
+	h1, h2 {
+
+	}
+
+	h3 , h4, h5 {
+
+	}
+}
