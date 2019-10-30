@@ -1,7 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack-common.js');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
@@ -10,9 +9,7 @@ module.exports = merge(common, {
 	mode: 'production',
 	devtool: 'source-map',
 	plugins: [
-		new CleanWebpackPlugin({
-			cleanAfterEveryBuildPatterns: ['dist']
-		}),
+		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
 			publicPath: '../'
