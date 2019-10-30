@@ -1,7 +1,8 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack-common.js');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
@@ -9,8 +10,8 @@ module.exports = merge(common, {
 	mode: 'production',
 	devtool: 'source-map',
 	plugins: [
-		new CleanWebpackPlugin(['dist'], {
-			root: path.resolve(__dirname, '../')
+		new CleanWebpackPlugin({
+			cleanAfterEveryBuildPatterns: ['dist']
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
@@ -64,9 +65,7 @@ module.exports = merge(common, {
 						loader: 'postcss-loader',
 						options: {
 							plugins: (loader) => [
-								require('autoprefixer')({
-									browsers: ['last 2 versions']
-								}),
+								require('autoprefixer'),
 								require('postcss-object-fit-images'),
 								require('pixrem')({
 									atrules: true,
