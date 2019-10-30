@@ -4,19 +4,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Webpack App</title>
-</head>
+<link href="css/theme.css" rel="stylesheet"><link href="css/frontpage.css" rel="stylesheet"></head>
 
 <body>
 	<header class="site-header">
 		<nav></nav>
 		<!--HOW TO CALL AN INLINE SVG 
-			<img class="inject-me" src="<%=require("./image/logo.svg")%>"> -->
+			<img class="inject-me" src="image/OfficeOpsLogo.svg"> -->
 		<!--HOW TO CALL AN SVG FROM THE SPRITEMAP 
 			<svg>
 				<use xlink:href="./image/spritemap.svg#icon-facebook.svg"></use>
 			</svg> -->
 		<!--HOW TO CALL AN IMAGE 
-			<img src="<%=require("./image/replace/sample.jpg")%>"> -->
+			<img src="image/replace/office-talk.jpg"> -->
 	</header>
 	<main id="main" class="site-main content-area">
 		<section class="showcase">
@@ -37,6 +37,6 @@
 	</footer>
 	<script src=" https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-</body>
+<script type="text/javascript" src="js/theme.js"></script><script type="text/javascript" src="js/frontpage.js"></script></body>
 
 </html>

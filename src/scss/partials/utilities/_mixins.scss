@@ -1,0 +1,13 @@
+// All the custom Mixins for this theme //
+
+// Create buttons for all colors in Bootstrap variables color map. ie "btn-green"
+@each $color,
+$value in $theme-colors {
+	.btn-#{$color} {
+		@include button-variant($value, $value,
+			$hover-background: lighten($value, 7.5%),
+			$hover-border: lighten($value, 15%),
+			$active-background: lighten($value, 10%),
+			$active-border: lighten($value, 12.5%));
+	}
+}

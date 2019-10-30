@@ -1,0 +1,100 @@
+//Paste Bootstrap Variable Overrides Here
+$white: #ffffff;
+$black: #000000;
+$gray-200: #ededed;
+$gray-300: #d8d8d8;
+$gray-600: #6D6A6A;
+$gray-700: #494949;
+$gray-800: #41403d;
+$gray-900: #2c2a2a;
+
+$blue: #023E66;
+$blue-light: #3281B7;
+$yellow: #F3ED6B;
+$orange: #F99F45;
+$green: #036635;
+$green-light: #7CC246;
+$teal: #24A5A1;
+
+$secondary: $green;
+$dark: $gray-900;
+$light: $white;
+$yiq-text-dark: $blue;
+
+$body-bg: #EFF2F5;
+
+/***REFERENCE DEFAULTS***/
+$font-weight-bold: 700 !default;
+$font-weight-normal: 400 !default;
+$primary: $blue !default;
+$box-shadow: 1px 1px 5px rgba($black, .2);
+
+// Typography
+$enable-responsive-font-sizes: true;
+$font-family-sans-serif: 'Muli',
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+$font-weight-bold: 700;
+$line-height-sm: 1.2;
+
+//Headings
+$headings-margin-bottom: .5em;
+$headings-font-weight: $font-weight-normal;
+$headings-color: $primary;
+$headings-line-height: 1.1;
+
+//Links
+$link-color: $blue;
+$link-hover-color: lighten($link-color, 15%);
+
+//Navbar
+$navbar-nav-link-padding-x: 1rem;
+$navbar-light-color: $dark;
+$navbar-light-hover-color: $blue-light;
+$navbar-light-active-color: $blue-light;
+$navbar-light-toggler-border-color: transparent;
+
+//Buttons
+$btn-font-weight: $font-weight-bold;
+$btn-border-radius: .25rem;
+$btn-border-radius-sm: .25rem;
+$btn-border-width: 2px;
+
+$btn-padding-y: .5rem;
+$btn-padding-x: 2rem;
+
+$btn-padding-y-sm: .25rem;
+$btn-padding-x-sm: 1rem;
+$btn-font-size-sm: 1rem;
+
+$btn-padding-y-lg: .35rem;
+$btn-padding-x-lg: 3rem;
+$btn-font-size-lg: 1.5rem;
+
+$btn-padding-y-xl: .35rem;
+$btn-padding-x-xl: 3rem;
+$btn-font-size-xl: 2rem;
+
+
+//Material Design Icons
+// $mdi-font-path: "~@mdi/font/fonts";
+
+//Slick Slider
+$slick-font-path: "../fonts/";
+$slick-loader-path: "../image/";
+$slick-dot-size: .5rem;
+$slick-arrow-color: $gray-600;
+// $slick-font-family: "Material Design Icons";
+// $slick-prev-character: "\f141";
+// $slick-next-character: "\f142";
+// $slick-dot-character: "\f764";
