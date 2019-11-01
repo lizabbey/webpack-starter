@@ -7,9 +7,11 @@ const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 module.exports = {
 	context: path.resolve(__dirname, '../'),
 	entry: {
-		theme: './src/theme.js',
-		frontpage: './src/front-page.js'
 		//Add entry points here as you need them
+		theme: './src/theme.js',
+		// frontpage: './src/front-page.js',
+		// critical_fp: './src/scss/critical-fp.scss', //CSS ONLY OUTPUT
+		
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
