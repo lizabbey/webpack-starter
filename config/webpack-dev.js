@@ -19,29 +19,20 @@ module.exports = merge(common, {
 			{
 				test: /\.scss$/i,
 				use: [
-					'style-loader',
 					MiniCssExtractPlugin.loader,
 					{
 						loader: 'css-loader',
-						options: {
-							sourceMap: true
-						}
 					},
-
 					{
 						loader: 'postcss-loader',
 						options: {
 							plugins: (loader) => [
 								require('autoprefixer'),
 							],
-							sourceMap: true
 						}
 					},
 					{
 						loader: 'sass-loader',
-						options: {
-							sourceMap: true
-						}
 					}
 				]
 			},

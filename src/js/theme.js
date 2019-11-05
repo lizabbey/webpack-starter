@@ -1,9 +1,9 @@
-import './scss/theme.scss';
+import '../scss/theme.scss';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/modal';
-import './js/sticky-header.js';
+import './sticky-header.js';
 
 jQuery(document).ready(function (jQuery) {
 	//Elements to inject

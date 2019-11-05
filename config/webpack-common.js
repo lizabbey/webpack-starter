@@ -8,10 +8,9 @@ module.exports = {
 	context: path.resolve(__dirname, '../'),
 	entry: {
 		//Add entry points here as you need them
-		theme: './src/theme.js',
+		theme: './src/js/theme.js',
 		// frontpage: './src/front-page.js',
 		// critical_fp: './src/scss/critical-fp.scss', //CSS ONLY OUTPUT
-		
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
