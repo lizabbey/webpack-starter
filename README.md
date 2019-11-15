@@ -35,7 +35,6 @@ There are a couple of things to know when working with webpack html.
 Once the homepage is built in html and styled correctly (mobile too!), you're ready to move it into Wordpress. 
 #### Local by Flywheel
 1. If you don't already have it, download and install [Local by Flywheel](https://localbyflywheel.com/) (free version)
-	* Under Local » Preferences » Advanced enable the IPv6 Loopback option (required for browsersync)
 2. Click the + to add a new site.
 3. Enter a name for your site and click "Advanced Options"
 4. Set the "Local site path" to your Sites/Client folder.
@@ -44,6 +43,8 @@ Once the homepage is built in html and styled correctly (mobile too!), you're re
 7. Click Add Site - This is going to create a wordpress installation on your local machine. 
 8. Navigate to your site folder then `/app/public/wp-content/themes` and copy your starter theme there. 
 9. In the Local app, Click "Start Site" to launch the server. Click "View Admin" to activate your theme, install plugins or create content.
+
+**If you notice Browsersync refreshing slowly, go to Local » Preferences » Advanced and enable the IPv6 Loopback option**
 
 #### Build the Theme
 1. In your text editor, navigate to and open the theme folder of your new site.
@@ -62,6 +63,7 @@ Take a look at what the Local app has to offer, it's pretty cool.
 * Right clicking on the name of the site in the sidebar gives several options
     * Choose Open Site SSH if you want to use WP-CLI
 
+***
 
 # Reference
 

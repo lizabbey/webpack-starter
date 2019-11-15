@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
@@ -17,9 +16,6 @@ module.exports = {
 		filename: 'js/[name].js',
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: './src/index.html',
-		}),
 		new webpack.ProvidePlugin({
 			SVGInjector: 'svg-injector-2'
 		}),
