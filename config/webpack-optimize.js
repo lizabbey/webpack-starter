@@ -4,29 +4,17 @@ const common = require('./webpack-common.js');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const MediaQueryPlugin = require('media-query-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
-//CHANGE TO THE CURRENT .local SITE
-const proxyUrl = 'https://amcom.dev-local/';
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+// const purgecss = require('@fullhuman/postcss-purgecss');
+// const purgecssWordpress = require('purgecss-with-wordpress');
 
 const config = merge(common, {
-	watch: true,
-	devtool: 'source-map',
-	mode: 'development',
+	mode: 'production',
 	plugins: [
-		new BrowserSyncPlugin({
-            proxy: proxyUrl,
-			https: true,
-            files: [
-                'wp-content/themes/**/*.css',
-                'wp-content/themes/**/*.js',
-                {
-                    match: ['../**/*.php'],
-                },
-            ],
-            injectCss: true,
-        }),
-		new CleanWebpackPlugin(),
+		new CleanWebpackPlugin({
+			protectWebpackAssets: false,
+            cleanAfterEveryBuildPatterns: ['*.LICENSE.txt'],
+		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
 		}),
@@ -41,7 +29,21 @@ const config = merge(common, {
 				'(min-width:1200px)': 'xl',
 			},
 		}),
-		
+		new ImageMinimizerPlugin({
+			minimizerOptions: {
+				// Lossless optimization with custom option
+				plugins: [
+					['mozjpeg', {
+						progressive: true,
+						quality: 65,
+					}],
+					['pngquant', {
+						quality: [.65, .9]
+					}],
+				],
+				fileName: '[path][name].[ext]'
+			},
+		}),
 	],
 	module: {
 		rules: [
@@ -56,11 +58,31 @@ const config = merge(common, {
 					},
 					{
 						loader: 'css-loader',
-						options: {
-							sourceMap: true,
-						}
 					},
 					MediaQueryPlugin.loader,
+					{
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									// purgecss({
+									// 	content: ['./**/*.php', paths.src + '/js/**/*.js'],
+									// 	safelist: {
+									// 		standard: [...purgecssWordpress.safelist, 'text-main'],
+									// 		greedy: [/site-logo/],
+									// 	},
+									// 	variables: true,
+									// }),
+									'autoprefixer',
+									'postcss-object-fit-images',
+									'postcss-combine-media-query',
+									'pixrem',
+									'cssnano',
+									
+								]
+							},
+						}
+					},
 					{
 						loader: 'sass-loader',
 					}, 
